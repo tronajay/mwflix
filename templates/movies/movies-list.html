@@ -1,0 +1,51 @@
+<!--Extend Base.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<div id="main-wrapper">
+    <div class="container">
+        <div style="text-align:center;margin-bottom: 20px;margin-top:20px;display:none;" id="gift-top"></div>
+        <div style="text-align:center;margin-bottom: 20px;margin-top:20px;display:none;" id="gift-middle"></div>
+        <section class="block_area block_area_home section-id-02">
+            <div class="block_area-header block_area-header-tabs">
+                <div class="float-left bah-heading mr-4">
+                    <h2 class="cat-heading">Latest Movies and TV Shows</h2>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="block_area-content block_area-list film_list film_list-grid">
+                <div class="film_list-wrap row">
+
+
+                    {% for m in movies %}
+                    <div class="flw-item">
+                        <div class="film-poster rounded">
+                            <img data-src="/media/{{m.thumbnail}}" class="film-poster-img lazyload" title="The Movies That Made Us" alt="The Movies That Made Us-hd">
+                            <a href="/movie/{{m.slug}}" class="film-poster-ahref" title="The Movies That Made Us"></a>
+                        </div>
+                        <div class="film-detail">
+                            <div class="fd-infor">
+                                <span class="fdi-item"><i class="fas fa-star hl mr-1"></i>{{m.rating}}</span>
+                                <span class="fdi-item"><strong>HD</strong></span>
+                                <span class="fdi-item">{{m.released|date:"Y"}}</span>
+                            </div>
+
+                            <h3 class="film-name"><a href="/movie/{{m.slug}}" title="The Movies That Made Us">{{m.title}}</a>
+                            </h3>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    {% endfor %}
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </section>
+
+        <h2 style="display:none;">watch movies online hd free, free tv shows online, hd streaming movies free, streaming movies and tv, free movies online 2021, watch a free movies online, watch movies online stream, movies to watch online</h2>
+    </div>
+</div>
+
+{% endblock content %}
+

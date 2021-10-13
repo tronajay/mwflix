@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>MWFlix - Movie Recommendation Website</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="1 days">
+    <meta http-equiv="content-language" content="en" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//static.zdassets.com">
+    <link rel="dns-prefetch" href="//s7.addthis.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <link rel="shortcut icon" href="/static/images/mwflix.jpg" type="image/x-icon" />
+    <meta property="og:type" content="website" />
+    <!--Begin: Stylesheet-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" href="/static/css/style.min.css">
+    <!--End: Stylesheet-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="sidebar_menu_bg"></div>
+        <div id="sidebar_menu">
+            <button class="btn btn-circle btn-secondary toggle-sidebar"><i class="fas fa-arrow-left"></i></button>
+            <ul class="nav sidebar_menu-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="/" title="Home">
+                        <div class="nl-icon mr-2"><i class="fas fa-columns"></i></div>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/movies" title="Movies">
+                        <div class="nl-icon mr-2"><i class="fas fa-play-circle"></i></div>Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/tv-shows" title="TV Shows">
+                        <div class="nl-icon mr-2"><i class="fas fa-video"></i></div>TV Shows</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/short-films" title="Short Films">
+                        <div class="nl-icon mr-2"><i class="fas fa-fire"></i></div>Short Films</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/top-imdb" title="Top IMDB">
+                        <div class="nl-icon mr-2"><i class="fab fa-android"></i></div>
+                        Top IMDB</a>
+                </li>
+                <li class="nav-item spacing"></li>
+                <li class="nav-item"><a class="nav-link nav-link-sub" title="Genre">Genre</a>
+                    <div class="sidebar_menu-sub" id="sidebar_subs_genre">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item"><a class="nav-link" href="/genre/action" title="Action">Action</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/genre/action-adventure" title="Action &amp; Adventure">Action &amp; Adventure</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/genre/adventure" title="Adventure">Adventure</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/genre/animation" title="Animation">Animation</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/genre/comedy" title="Comedy">Comedy</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/genre/crime" title="Crime">Crime</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/genre/science-fiction" title="Science Fiction">Science Fiction</a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+
+        <div id="wrapper">
+            <div id="header">
+                <div class="container">
+                    <div id="mobile_search"><i class="fa fa-search"></i></div>
+                    <a href="/" id="logo" title="SFlix">
+            <img src="/static/images/mwflix-logo.png" alt="Logo"></a>
+                    <!--Begin: Menu-->
+                    <div id="header_browser">
+                        <div class="header-btn"><i class="fas fa-bars mr-2"></i>Browse</div>
+                    </div>
+                    <!--End: Menu-->
+                    <div id="search">
+                        <div class="search-content">
+                            <form class="search-form" submit="search">
+                                <div class="search-icon"><i class="fa fa-search"></i></div>
+                                <input v-model="keyword" type="text" class="form-control search-input" autocomplete="off" name="keyword" placeholder="Enter keywords...">
+                            </form>
+                            <div class="nav search-result-pop search-suggest"></div>
+                        </div>
+                    </div>
+                    <div id="header_right">
+                        <div id="header_login"></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                {% block content %}{% endblock content %}
+            </div>
+
+            <div style="text-align:center;margin-bottom: 20px;margin-top:20px;display:none;" id="gift-bottom"></div>
+            <div id="footer">
+                <h1 style="display: none;">MWFlix | Movie and TV Shows Recommendation site.</h1>
+                <div class="container">
+                    <div class="footer-links">
+                        <ul class="ulclear">
+                            <li><a href="/android-movies-apk" title="Android App">About Us</a></li>
+                            <li><a href="/terms" title="Terms of service">Terms of service</a></li>
+                            <li><a href="/contact" title="Contact">Contact</a></li>
+                            <li><a href="/sitemap.xml" title="Sitemap">Sitemap</a></li>
+
+
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div id="footer-about">
+                <div class="container">
+                    <div class="about-text">
+                        MWFlix is a Movie and TV Shows Recommendation website where you can get latest movies, TV Shows and Short Films.
+                    </div>
+                    <p class="copyright">© MWFlix</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.1/lazysizes.min.js" async></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="/static/js/app.min.js"></script>
+
+
+</body>
+
+</html>

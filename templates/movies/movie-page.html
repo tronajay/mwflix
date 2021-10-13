@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!--Begin: Main-->
+        <div id="main-wrapper">
+            <div class="mw-detail-wrap">
+                <div class="detail_page detail_page-movie">
+                    <div class="detail-container">
+                        <div class="cover_follow"
+                             style="background-image: url({{movie.thumbnail}});"></div>
+                        <div class="container">
+                            <!--Begin: Watch-->
+                            <div class="detail_page-watch" data-id="66669" data-type="1">
+                                <div class="detail_page-infor">
+                                    <div class="dp-i-content">
+                                        <div class="dp-i-c-poster">
+                                            <div class="film-poster mb-2">
+                                                <img class="film-poster-img"
+                                                     src="/media/{{movie.thumbnail}}"
+                                                     title="Venom: Let There Be Carnage"
+                                                     alt="Venom: Let There Be Carnage-hd">
+                                            </div>
+                                        </div>
+                                        <div class="dp-i-c-right">
+                                            <h2 class="heading-name"><a
+                                                        href="/movie/venom-let-there-be-carnage-66669">{{movie.title}}</a>
+                                            </h2>
+                                            <div class="film-stats">
+                                                <div class="fs-item"><span
+                                                            class="quality"><strong>HD</strong></span>
+                                                </div>
+                                                <div class="fs-item" data-toggle="modal" data-target="#modaltrailer"><a
+                                                            class="trailer"><i class="fas fa-video mr-1"></i>
+                                                        Trailer</a></div>
+                                                <div class="fs-item"><span
+                                                            class="imdb">IMDB: {{movie.rating}}</span>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            
+                                                <div class="film-servers film-server-movie">
+                                                    <div id="content-episodes"></div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            
+                                            <div class="description">
+                                                <div class="block mb-2"><strong>Overview:</strong></div>
+                                               {{movie.description}}
+                                            </div>
+                                            <div class="elements">
+                                                <div class="row">
+                                                    <div class="col-xl-5 col-lg-6 col-md-8 col-sm-12">
+                                                        <div class="row-line">
+                                                            <span class="type"><strong>Released: </strong></span> {{movie.released}}
+                                                        </div>
+                                                        <div class="row-line">
+                                                            <span class="type"><strong>Genre: </strong></span>
+                                                            
+                                                                {% for gm in movie.genre.all %}
+                                                                    <a href="/genre/{{gm.slug}}"
+                                                                   title="Science Fiction">{{gm.title}}</a>,
+                                                                {% endfor %} 
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="film-servers film-server-movie film-servers-watch mt-3 mb-0"
+                                     id="servers-list" style="display: none;"></div>
+                                
+                            </div>
+                            <!--End: Watch-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End: Related-->
+        </div>
+        <!--End: Main-->
+         <div class="modal fade premodal premodal-trailer" id="modaltrailer" tabindex="-1" role="dialog"
+         aria-labelledby="modaltrailertitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="iframe16x9">
+                        <iframe width="560" height="315"
+                                id="iframe-trailer" data-src="https://www.youtube.com/embed/-ezfi6FQ8Ds"
+                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
