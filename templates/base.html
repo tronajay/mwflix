@@ -1,142 +1,239 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html lang="en">
 
 <head>
-    <title>MWFlix - Movie Recommendation Website</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="robots" content="index, follow">
-    <meta name="revisit-after" content="1 days">
-    <meta http-equiv="content-language" content="en" />
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="//static.zdassets.com">
-    <link rel="dns-prefetch" href="//s7.addthis.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-    <link rel="shortcut icon" href="/static/images/mwflix.jpg" type="image/x-icon" />
-    <meta property="og:type" content="website" />
-    <!--Begin: Stylesheet-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
-    <link rel="stylesheet" href="/static/css/style.min.css">
-    <!--End: Stylesheet-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <title>MWFlix</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/images/mwflix.jpg" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  {% block head %}{% endblock head %}
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.1.0
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body>
-    <div id="app">
 
-        <div id="sidebar_menu_bg"></div>
-        <div id="sidebar_menu">
-            <button class="btn btn-circle btn-secondary toggle-sidebar"><i class="fas fa-arrow-left"></i></button>
-            <ul class="nav sidebar_menu-list">
-                <li class="nav-item">
-                    <a class="nav-link" href="/" title="Home">
-                        <div class="nl-icon mr-2"><i class="fas fa-columns"></i></div>Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/movies" title="Movies">
-                        <div class="nl-icon mr-2"><i class="fas fa-play-circle"></i></div>Movies</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/tv-shows" title="TV Shows">
-                        <div class="nl-icon mr-2"><i class="fas fa-video"></i></div>TV Shows</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/short-films" title="Short Films">
-                        <div class="nl-icon mr-2"><i class="fas fa-fire"></i></div>Short Films</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/top-imdb" title="Top IMDB">
-                        <div class="nl-icon mr-2"><i class="fab fa-android"></i></div>
-                        Top IMDB</a>
-                </li>
-                <li class="nav-item spacing"></li>
-                <li class="nav-item"><a class="nav-link nav-link-sub" title="Genre">Genre</a>
-                    <div class="sidebar_menu-sub" id="sidebar_subs_genre">
-                        <ul class="nav sub-menu">
-                            <li class="nav-item"><a class="nav-link" href="/genre/action" title="Action">Action</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/genre/action-adventure" title="Action &amp; Adventure">Action &amp; Adventure</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/genre/adventure" title="Adventure">Adventure</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/genre/animation" title="Animation">Animation</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/genre/comedy" title="Comedy">Comedy</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/genre/crime" title="Crime">Crime</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/genre/science-fiction" title="Science Fiction">Science Fiction</a></li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                </li>
-            </ul>
-            <div class="clearfix"></div>
-        </div>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
 
-        <div id="wrapper">
-            <div id="header">
-                <div class="container">
-                    <div id="mobile_search"><i class="fa fa-search"></i></div>
-                    <a href="/" id="logo" title="SFlix">
-            <img src="/static/images/mwflix-logo.png" alt="Logo"></a>
-                    <!--Begin: Menu-->
-                    <div id="header_browser">
-                        <div class="header-btn"><i class="fas fa-bars mr-2"></i>Browse</div>
-                    </div>
-                    <!--End: Menu-->
-                    <div id="search">
-                        <div class="search-content">
-                            <form class="search-form" submit="search">
-                                <div class="search-icon"><i class="fa fa-search"></i></div>
-                                <input v-model="keyword" type="text" class="form-control search-input" autocomplete="off" name="keyword" placeholder="Enter keywords...">
-                            </form>
-                            <div class="nav search-result-pop search-suggest"></div>
-                        </div>
-                    </div>
-                    <div id="header_right">
-                        <div id="header_login"></div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
+    <div class="d-flex align-items-center justify-content-between">
+    <i class="bi bi-list toggle-sidebar-btn"></i>
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="/assets/images/mwflix-logo.png" alt="">
+        <span class="d-none d-lg-block">MWFlix</span>
+      </a>
+    </div><!-- End Logo -->
 
-            <div class="main-content">
-                {% block content %}{% endblock content %}
-            </div>
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="get" action="/search">
+        <input type="text" name="q" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
 
-            <div style="text-align:center;margin-bottom: 20px;margin-top:20px;display:none;" id="gift-bottom"></div>
-            <div id="footer">
-                <h1 style="display: none;">MWFlix | Movie and TV Shows Recommendation site.</h1>
-                <div class="container">
-                    <div class="footer-links">
-                        <ul class="ulclear">
-                            <li><a href="/android-movies-apk" title="Android App">About Us</a></li>
-                            <li><a href="/terms" title="Terms of service">Terms of service</a></li>
-                            <li><a href="/contact" title="Contact">Contact</a></li>
-                            <li><a href="/sitemap.xml" title="Sitemap">Sitemap</a></li>
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{request.user.first_name}}</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>{{request.user.first_name}}</h6>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="/logout">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/">
+          <i class="bi bi-grid"></i>
+          <span>Home</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/movies">
+          <i class="bi bi-person"></i>
+          <span>Movies</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/tv-shows">
+          <i class="bi bi-person"></i>
+          <span>TV Shows</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/short-films">
+          <i class="bi bi-person"></i>
+          <span>Short Films</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
 
 
-                        </ul>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div id="footer-about">
-                <div class="container">
-                    <div class="about-text">
-                        MWFlix is a Movie and TV Shows Recommendation website where you can get latest movies, TV Shows and Short Films.
-                    </div>
-                    <p class="copyright">© MWFlix</p>
-                </div>
-            </div>
-        </div>
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Genre</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          {% for g in genre %}
+            <li>
+              <a href="/genre/{{g.slug}}">
+                <i class="bi bi-circle"></i><span>{{g.title}}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li><!-- End Components Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+    <!-- breadcrumb
+    <div class="pagetitle">
+      <h1>Blank Page</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item">Pages</li>
+          <li class="breadcrumb-item active">Blank</li>
+        </ol>
+      </nav>
+    </div> -->
+
+    <section class="section">
+
+      {% block content %}
+
+      {% endblock content %}
+
+
+
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>MWFlix</span></strong>. All Rights Reserved
     </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.1/lazysizes.min.js" async></script>
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="/static/js/app.min.js"></script>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://mwflix.com/">Ajay Patel</a>
+    </div>
+  </footer><!-- End Footer -->
 
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/quill/quill.min.js"></script>
+  <script src="/assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="/assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="/assets/vendor/chart.js/chart.min.js"></script>
+  <script src="/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="/assets/vendor/echarts/echarts.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/assets/js/main.js"></script>
 
 </body>
 

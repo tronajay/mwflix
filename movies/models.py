@@ -1,4 +1,5 @@
 from django.db import models
+from stream.models import Stream
 
 MOVIE_CAT = (
     ("Movie", "Movie"),
@@ -21,6 +22,7 @@ class Movie(models.Model):
     slug = models.CharField(max_length=200)
     category = models.CharField(choices=MOVIE_CAT,max_length=200,default="Movie")
     genre = models.ManyToManyField(Genre)
+    platform = models.ManyToManyField(Stream,default=1)
     thumbnail = models.ImageField(upload_to='movies/',blank=True)
     description = models.TextField()
     rating = models.FloatField(default=0)
