@@ -1,4 +1,3 @@
-from django.db import models
 from django.shortcuts import redirect, render
 from .models import Genre, Movie, Production
 from django.core.paginator import Paginator
