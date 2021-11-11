@@ -10,4 +10,5 @@ urlpatterns = [
     path('tv-shows',views.tvshows,name="tvshows"),
     path('short-films',views.shortfilm,name="shortfilm"),
     path('search',views.search,name="search"),
+    path('production/<str:slug>',views.production,name="production"),
 ]

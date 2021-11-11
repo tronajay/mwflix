@@ -25,6 +25,9 @@
                     <span class="fw-bolder">Released: </span>{{movie.released}} <br>
                     <span class="fw-bold">Genre:</span>{% for mg in movie.genre.all %}
                         <span><a href="/genre/{{mg.slug}}">{{mg.title}}</a></span>,
+                    {% endfor %}<br>
+                    <span class="fw-bold">Production:</span>{% for p in movie.production.all %}
+                      <a href="/production/{{p.slug}}"><span>{{p.title}}</span></a>,
                     {% endfor %}
                     <!--Streaming Platforms Start-->
                     <div class="row mt-3">

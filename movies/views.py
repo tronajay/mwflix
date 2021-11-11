@@ -1,6 +1,6 @@
 from django.db import models
 from django.shortcuts import redirect, render
-from .models import Genre, Movie
+from .models import Genre, Movie, Production
 from django.core.paginator import Paginator
 
 def genres(request):
@@ -57,3 +57,11 @@ def search(request):
         return render(request,'movies/movies-list.html',params)
     else:
         return redirect("/")
+    
+def production(request,slug):
+    movie = Paginator(Movie.objects.filter(production__slug=slug).order_by('released')[::-1],18)
+    page = request.GET.get('page')
+    movies = movie.get_page(page)
+    stream = Production.objects.get(slug=slug)
+    params = {'movies':movies,'stream':stream}
+    return render(request,'movies/movies-list.html',params)
