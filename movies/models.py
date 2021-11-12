@@ -41,7 +41,7 @@ class Movie(models.Model):
     platform = models.ManyToManyField(Stream,blank=True)
     thumbnail = models.ImageField(upload_to='movies/',blank=True)
     description = models.TextField()
-    rating = models.FloatField(default=0)
+    rating = models.CharField(max_length=10,default="0")
     released = models.DateField(auto_now=False)
 
     def __str__(self):
