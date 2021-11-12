@@ -27,6 +27,6 @@ Make sure you have installed Python.
 3. Run "python3 manage.py migrate"
 4. Run "python3 manage.py runserver"
 
-Developed By <a href="htttps://github.com/tronajay">Ajay Patel</a>
+Developed By <a href="https://github.com/tronajay">Ajay Patel</a>
 
 Want to Know How I Deployed this Django Project in Heroku and Handled Static and Media Files? then, Follow me (<a href="https://linkedin.com/in/tronajay">Linkedin</a>) and I will Guide You.
