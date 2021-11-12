@@ -1,5 +1,5 @@
 # MWFlix
-MWFlix is a Python Django Based Movie and TV Shows Recommendation website where you can find what to Binge watch at your home. It provides your latest released and Upcoming Movies, TV Shows, Short films and more.
+<a href="https://mwflix.herokuapp.com">MWFlix</a> is a Python Django Based Movie and TV Shows Recommendation website where you can find what to Binge watch at your home. It provides your latest released and Upcoming Movies, TV Shows, Short films and more.
 
 # Features
 1. Movies, TV Shows and Short Films
@@ -9,6 +9,8 @@ MWFlix is a Python Django Based Movie and TV Shows Recommendation website where 
 5. Pagination
 6. Multiple Genre
 7. Details Page.
+
+Checkout Live Demo <a href="https://mwflix.herokuapp.com">Here</a>
 
 # Here are Some Screenshots
 
@@ -26,3 +28,5 @@ Make sure you have installed Python.
 4. Run "python3 manage.py runserver"
 
 Developed By <a href="github.com/tronajay">Ajay Patel</a>
+
+Want to Know How I Deployed this Django Project in Heroku and Handled Static and Media Files? then, Follow me (<a href="https://linkedin.com/in/tronajay">Linkedin</a>) and I will Guide You.
