@@ -1,6 +1,15 @@
 # MWFlix
 MWFlix is a Python Django Based Movie and TV Shows Recommendation website where you can find what to Binge watch at your home. It provides your latest released and Upcoming Movies, TV Shows, Short films and more.
 
+# Features
+1. Movies, TV Shows and Short Films
+2. Streaming Platforms
+3. Production Houses
+4. Search Option
+5. Pagination
+6. Multiple Genre
+7. Details Page.
+
 # Here are Some Screenshots
 
 <img src="https://i.ibb.co/51xGbBS/mwflix-production.jpg"  style="border-radius: 10px; box-shadow: 2px 2px 2px 2px; margin: 10px;" alt="mwflix-production" border="0">
