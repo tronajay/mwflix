@@ -17,7 +17,7 @@
             <div class="card-body p-5">
               <div class="row">
                 <div class="col-lg-4 col-md-4 col-xl-4 text-center">
-                    <img src="/media/{{movie.thumbnail}}" class="rounded shadow" alt="">
+                    <img src="{{movie.thumbnail.url}}" class="rounded shadow" alt="">
                 </div>
                 <div class="col-lg-7 col-xl-7 col-md-7 p-3">
                     <h2 class="fs-2 fw-bolder"> {{movie.title}} </h2>
@@ -38,7 +38,7 @@
                             <div class="card-body align-items-center mt-3">
                               <div class="row">
                                 <div class="col-4 my-auto">
-                                  <img src="/media/{{s.thumbnail}}" class="w-100 center-block rounded-circle">
+                                  <img src="{{s.thumbnail.url}}" alt="{{s.title}}" class="w-100 center-block rounded-circle">
                                 </div>
                                 <div class="col-8">
                                   <span class="fw-bold">{{s.title}}</span><br>

@@ -21,12 +21,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
-# SECRET_KEY = 'we-3k&j_jt90#!2--vm_ljhd1w@i=rnrsteh((@o3v&zu!+#-t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['mwflix.herokuapp.com','*']
+ALLOWED_HOSTS = ['mwflix.herokuapp.com']
 
 
 # Application definition
@@ -40,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'movies',
     'stream',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -122,11 +123,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ['CLOUDINARY_CLOUD_NAME'],
+    'API_KEY': os.environ['CLOUDINARY_API_KEY'],
+    'API_SECRET': os.environ['CLOUDINARY_API_SECRET'],
+}
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 STATIC_URL = '/assets/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
